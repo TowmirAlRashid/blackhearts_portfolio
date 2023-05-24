@@ -2,6 +2,9 @@ import Link from "next/link";
 import React from "react";
 import Logo from "./Logo";
 import { useRouter } from "next/router";
+import FaceBookIcon, { GithubIcon, LinkedInIcon, TwitterIcon } from "./Icons";
+
+import { motion } from "framer-motion";
 
 const CustomLink = ({ title, href, className = "" }) => {
   const router = useRouter();
@@ -30,22 +33,46 @@ const Navbar = () => {
         <CustomLink href="/blogs" title="Blogs" className="ml-4" />
       </nav>
 
-      <nav>
-        <Link href="/" target="_blank">
+      <nav className="flex items-center justify-center flex-wrap">
+        <motion.a
+          href="https://www.facebook.com/al.towmir/"
+          target="_blank"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-6 mr-3"
+        >
+          <FaceBookIcon />
+        </motion.a>
+        <motion.a
+          href="https://github.com/TowmirAlRashid"
+          target="_blank"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-6 mx-3"
+        >
+          <GithubIcon />
+        </motion.a>
+        <motion.a
+          href="https://www.linkedin.com/in/alrashid-towmir-6293631b3/"
+          target="_blank"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-6 mx-3"
+        >
+          <LinkedInIcon />
+        </motion.a>
+        <motion.a
+          href="https://twitter.com/al_towmir"
+          target="_blank"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-6 ml-3"
+        >
+          <TwitterIcon />
+        </motion.a>
+        {/* <Link href="/" target="_blank">
           T
-        </Link>
-        <Link href="/" target="_blank">
-          T
-        </Link>
-        <Link href="/" target="_blank">
-          T
-        </Link>
-        <Link href="/" target="_blank">
-          T
-        </Link>
-        <Link href="/" target="_blank">
-          T
-        </Link>
+        </Link> */}
       </nav>
 
       <div className="absolute left-[50%] top-2 translate-x-[-50%]">
